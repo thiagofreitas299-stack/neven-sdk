@@ -1,0 +1,23 @@
+{
+  "api_key": "",
+  "agent_private_key": "",
+  "base_url": "http://localhost:8420",
+  "host": "0.0.0.0",
+  "port": 8420,
+  "workers": 4,
+  "debug": false,
+  "detection_confidence": 0.35,
+  "tracking_max_age": 30,
+  "frame_rate": 15,
+  "detection_model": "builtin",
+  "safety_enabled": true,
+  "max_actuation_frequency_seconds": 10.0,
+  "fail_safe_default": "locked",
+  "redis_url": "redis://localhost:6379",
+  "database_url": "sqlite:///neven.db",
+  "analytics_enabled": true,
+  "heatmap_resolution": 50,
+  "dwell_time_threshold_seconds": 5.0,
+  "log_level": "INFO",
+  "log_file": null
+}

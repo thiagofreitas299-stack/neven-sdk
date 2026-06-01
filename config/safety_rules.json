@@ -1,0 +1,40 @@
+{
+  "global_rules": [
+    {
+      "rule_id": "rule_max_actuation_frequency",
+      "description": "Prevent physical wear or malicious denial of service by limiting unlocks to 1 per 10 seconds",
+      "trigger_action": "*",
+      "assertion": "time_since_last_actuation > 10.0",
+      "fail_action": "RATE_LIMIT_BLOCK",
+      "enabled": true
+    },
+    {
+      "rule_id": "rule_session_required",
+      "description": "All actions require an active authenticated session",
+      "trigger_action": "*",
+      "assertion": "session_active == True",
+      "fail_action": "BLOCK_AND_LOG",
+      "enabled": true
+    }
+  ],
+  "node_rules": {
+    "node_demo_hub": [
+      {
+        "rule_id": "rule_prevent_overload",
+        "description": "Do not unlock or load compartment if weight sensor exceeds maximum capacity (50kg)",
+        "trigger_action": "unlock_compartment",
+        "assertion": "sensor_weight_kg < 50.0",
+        "fail_action": "BLOCK_AND_ALARM",
+        "enabled": true
+      },
+      {
+        "rule_id": "rule_human_presence_required",
+        "description": "Do not open any locker compartment unless a person is detected nearby",
+        "trigger_action": "unlock_compartment",
+        "assertion": "occupancy > 0",
+        "fail_action": "BLOCK_AND_LOG",
+        "enabled": true
+      }
+    ]
+  }
+}

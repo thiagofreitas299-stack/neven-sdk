@@ -1,0 +1,1 @@
+{"entry_id": "audit_0f4bc9a51ad7", "did": "did:neven:agent-local-6937ec51", "action": "unlock_compartment", "target_node": "node_01", "timestamp": "2026-06-01T10:43:40.654532+00:00", "signature": "0a62fd004ae279262040be2dd5aa59e3d173e9db69e1335cce935732a8b73200", "parameters": {"compartment_id": "A1"}, "result": "signed", "anonymized": false}

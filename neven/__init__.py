@@ -32,7 +32,7 @@ __license__ = "MIT"
 from neven.core.client import NevenClient
 
 # Identity (KAIS)
-from neven.core.identity import NevenIdentity
+from neven.core.identity import KAISIdentity as NevenIdentity
 
 # Exceptions
 from neven.core.exceptions import (
@@ -61,7 +61,7 @@ __all__ = [
     # Client
     "NevenClient",
     # Identity
-    "NevenIdentity",
+    "NevenIdentity",  # alias for KAISIdentity
     # Config
     "NevenConfig",
     # Exceptions
@@ -79,3 +79,9 @@ __all__ = [
     "PerceiveResponse",
     "ActResponse",
 ]
+
+# MCP Server
+from neven.mcp.server import NevenMCPServer, NEVEN_MCP_TOOLS
+
+# Tiers
+from neven.core.tiers import TierName, TierLimits

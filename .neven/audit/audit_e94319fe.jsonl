@@ -1,0 +1,1 @@
+{"entry_id": "audit_a42c8885d604", "did": "did:neven:agent-local-e94319fe", "action": "unlock", "target_node": "node_01", "timestamp": "2026-06-01T10:43:40.658023+00:00", "signature": "69cea174ada8320543bc06f8c06333f17cc3a551aff21ee58fd95a01f94bb791", "parameters": {"key": "val"}, "result": "signed", "anonymized": false}

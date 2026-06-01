@@ -1,0 +1,1 @@
+{"entry_id": "audit_865e116edce1", "did": "did:neven:agent-local-383baa27", "action": "lock_door", "target_node": "node_02", "timestamp": "2026-06-01T10:43:40.655315+00:00", "signature": "22b012f9b4a13e3bd6ec110c011d9af0db17c16128ec1abdb597536da7d17eba", "parameters": {"door_id": "main"}, "result": "signed", "anonymized": false}
