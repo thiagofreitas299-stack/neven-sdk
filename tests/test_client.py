@@ -11,8 +11,8 @@ import threading
 import time
 
 from neven import NevenClient, NevenIdentity
-from neven.exceptions import NevenSessionError, NevenSafetyError
-from neven.mock_server import MockServer
+from neven.core.exceptions import NevenSessionError, NevenSafetyError
+from neven.api.mock_server import MockServer
 
 
 # ─────────────────────────────────────────────────────────────────────────────

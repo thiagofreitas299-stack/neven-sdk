@@ -15,7 +15,7 @@ Run:
 import time
 from neven import NevenClient
 from neven.exceptions import NevenSafetyError
-from neven.mock_server import MockServer
+from neven.api.mock_server import MockServer
 
 
 def main():

@@ -1,0 +1,40 @@
+version: "3.9"
+
+services:
+  neven:
+    build: .
+    container_name: neven-runtime
+    ports:
+      - "8420:8420"
+    environment:
+      - NEVEN_HOST=0.0.0.0
+      - NEVEN_PORT=8420
+      - NEVEN_REDIS_URL=redis://redis:6379
+      - NEVEN_LOG_LEVEL=INFO
+    depends_on:
+      - redis
+    restart: unless-stopped
+    volumes:
+      - neven-data:/app/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: neven-redis
+    restart: unless-stopped
+    volumes:
+      - redis-data:/data
+
+  demo:
+    build: .
+    container_name: neven-demo
+    command: ["python", "examples/quickstart.py"]
+    environment:
+      - NEVEN_BASE_URL=http://neven:8420
+    depends_on:
+      - neven
+    profiles:
+      - demo
+
+volumes:
+  neven-data:
+  redis-data:

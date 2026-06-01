@@ -11,7 +11,7 @@ Run this demo locally with the mock server:
 """
 
 from neven import NevenClient
-from neven.mock_server import MockServer
+from neven.api.mock_server import MockServer
 
 # ─── Start mock server in background ────────────────────────────────────────
 print("Starting NEVEN mock server...")

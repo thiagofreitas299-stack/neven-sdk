@@ -1,0 +1,25 @@
+# Core
+requests>=2.31.0
+pydantic>=2.0.0
+click>=8.1.0
+rich>=13.0.0
+
+# API Server
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+
+# Optional: Vision
+# opencv-python>=4.8.0
+# ultralytics>=8.0.0  # YOLOv8
+
+# Optional: Hardware
+# paho-mqtt>=1.6.0
+# websocket-client>=1.7.0
+
+# Optional: Storage
+# redis>=5.0.0
+# sqlalchemy>=2.0.0
+
+# Dev/Test
+pytest>=7.4.0
+httpx>=0.26.0

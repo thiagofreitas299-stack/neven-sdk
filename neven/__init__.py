@@ -1,7 +1,10 @@
 """
 NEVEN SDK — Physical Intelligence as a Service
 ===============================================
-Connect any AI agent to the physical world.
+The OS for Autonomous Agents in the Physical World.
+
+Connect any AI agent to cameras, screens, sensors, locks, and speakers
+through a single unified API. No proprietary hardware required.
 
 "Stripe didn't build a bank. Twilio didn't build a tower.
  NEVEN doesn't build hardware — NEVEN makes any hardware think."
@@ -10,12 +13,14 @@ Quick Start:
     from neven import NevenClient
 
     client = NevenClient(api_key="nv_live_xxx")
-    session = client.connect(agent_id="my-agent", requested_nodes=["node_sp_01"])
+    session = client.connect(agent_id="my-agent", nodes=["node_sp_01"])
     state = client.perceive(node_id="node_sp_01")
     client.act(node_id="node_sp_01", action_type="display_message",
                parameters={"text": "Hello, Physical World!"})
 
-Docs: https://docs.neventech.com
+Docs:    https://docs.neventech.com
+GitHub:  https://github.com/thiagofreitas299-stack/neven-sdk
+Website: https://neventech.com
 """
 
 __version__ = "1.0.0"
@@ -23,9 +28,14 @@ __author__ = "NEVEN Technologies"
 __email__ = "sdk@neventech.com"
 __license__ = "MIT"
 
-from neven.client import NevenClient
-from neven.identity import NevenIdentity
-from neven.exceptions import (
+# Core client — primary interface
+from neven.core.client import NevenClient
+
+# Identity (KAIS)
+from neven.core.identity import NevenIdentity
+
+# Exceptions
+from neven.core.exceptions import (
     NevenError,
     NevenAuthError,
     NevenConnectionError,
@@ -33,12 +43,39 @@ from neven.exceptions import (
     NevenNodeNotFoundError,
 )
 
+# Config
+from neven.core.config import NevenConfig
+
+# Models
+from neven.core.models import (
+    PhysicalNode,
+    Device,
+    DetectedEntity,
+    SpatialState,
+    ConnectResponse,
+    PerceiveResponse,
+    ActResponse,
+)
+
 __all__ = [
+    # Client
     "NevenClient",
+    # Identity
     "NevenIdentity",
+    # Config
+    "NevenConfig",
+    # Exceptions
     "NevenError",
     "NevenAuthError",
     "NevenConnectionError",
     "NevenSafetyError",
     "NevenNodeNotFoundError",
+    # Models
+    "PhysicalNode",
+    "Device",
+    "DetectedEntity",
+    "SpatialState",
+    "ConnectResponse",
+    "PerceiveResponse",
+    "ActResponse",
 ]

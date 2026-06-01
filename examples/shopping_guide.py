@@ -16,7 +16,7 @@ Run:
 
 import time
 from neven import NevenClient
-from neven.mock_server import MockServer
+from neven.api.mock_server import MockServer
 
 # In production, this would call your LLM to generate a response
 def generate_greeting(entity_count: int, temperature: float) -> str:
